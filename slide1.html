@@ -4,7 +4,7 @@
     <title>R básico para Químicos  </title>
     <meta charset="utf-8" />
     <meta name="author" content="     R-Ladies Vitória" />
-    <script src="libs/header-attrs-2.27/header-attrs.js"></script>
+    <script src="libs/header-attrs-2.25/header-attrs.js"></script>
     <link rel="stylesheet" href="css/kunoichi.css" type="text/css" />
     <link rel="stylesheet" href="css/ninjutsu.css" type="text/css" />
     <link rel="stylesheet" href="css/rladies-fonts.css" type="text/css" />
@@ -65,7 +65,7 @@ class: middle
 class:  center
 
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="img/hexlogorladies.jpeg" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt; &amp;lt;/center&amp;gt;&amp;lt;/b&amp;gt;" width="18%" /&gt;
+&lt;img src="img/hexlogorladies.jpeg" alt="&lt;center&gt;&lt;b&gt; &lt;/center&gt;&lt;/b&gt;" width="18%" /&gt;
 &lt;p class="caption"&gt;&lt;center&gt;&lt;b&gt; &lt;/center&gt;&lt;/b&gt;&lt;/p&gt;
 &lt;/div&gt;
 
@@ -85,7 +85,7 @@ class:  center
 class:  center
 
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="img/rladies_vix.png" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt; &amp;lt;/center&amp;gt;&amp;lt;/b&amp;gt;" width="40%" /&gt;
+&lt;img src="img/rladies_vix.png" alt="&lt;center&gt;&lt;b&gt; &lt;/center&gt;&lt;/b&gt;" width="40%" /&gt;
 &lt;p class="caption"&gt;&lt;center&gt;&lt;b&gt; &lt;/center&gt;&lt;/b&gt;&lt;/p&gt;
 &lt;/div&gt;
 
@@ -110,7 +110,7 @@ class: middle
 
 
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="img/R_logo.svg.png" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt; &amp;lt;/center&amp;gt;&amp;lt;/b&amp;gt;" width="25%" /&gt;
+&lt;img src="img/R_logo.svg.png" alt="&lt;center&gt;&lt;b&gt; &lt;/center&gt;&lt;/b&gt;" width="25%" /&gt;
 &lt;p class="caption"&gt;&lt;center&gt;&lt;b&gt; &lt;/center&gt;&lt;/b&gt;&lt;/p&gt;
 &lt;/div&gt;
 
@@ -132,7 +132,7 @@ class: middle
 class: middle
 
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="img/rstudio.png" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt; &amp;lt;/center&amp;gt;&amp;lt;/b&amp;gt;" width="45%" /&gt;
+&lt;img src="img/rstudio.png" alt="&lt;center&gt;&lt;b&gt; &lt;/center&gt;&lt;/b&gt;" width="45%" /&gt;
 &lt;p class="caption"&gt;&lt;center&gt;&lt;b&gt; &lt;/center&gt;&lt;/b&gt;&lt;/p&gt;
 &lt;/div&gt;
 
@@ -153,7 +153,7 @@ class: middle
 # RStudio
 
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="figures/rstudio1.png" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt; &amp;lt;/center&amp;gt;&amp;lt;/b&amp;gt;" width="100%" /&gt;
+&lt;img src="figures/rstudio1.png" alt="&lt;center&gt;&lt;b&gt; &lt;/center&gt;&lt;/b&gt;" width="100%" /&gt;
 &lt;p class="caption"&gt;&lt;center&gt;&lt;b&gt; &lt;/center&gt;&lt;/b&gt;&lt;/p&gt;
 &lt;/div&gt;
 ---
@@ -227,7 +227,7 @@ class: middle
 # Shall we?
 
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="img/allisonhorst/community1.jpg" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt;Ilustração por Allison Horst - Twitter: &amp;lt;a href='https://twitter.com/allison_horst/'&amp;gt; @allison_horst&amp;lt;/a&amp;gt; &amp;lt;/b&amp;gt;&amp;lt;/center&amp;gt;" width="40%" /&gt;
+&lt;img src="img/allisonhorst/community1.jpg" alt="&lt;center&gt;&lt;b&gt;Ilustração por Allison Horst - Twitter: &lt;a href='https://twitter.com/allison_horst/'&gt; @allison_horst&lt;/a&gt; &lt;/b&gt;&lt;/center&gt;" width="40%" /&gt;
 &lt;p class="caption"&gt;&lt;center&gt;&lt;b&gt;Ilustração por Allison Horst - Twitter: &lt;a href='https://twitter.com/allison_horst/'&gt; @allison_horst&lt;/a&gt; &lt;/b&gt;&lt;/center&gt;&lt;/p&gt;
 &lt;/div&gt;
 
@@ -239,37 +239,22 @@ class: middle
 &lt;!-- 1) Operadores --&gt;
 
 
-``` r
+```r
 #adição
 10+15
   #&gt; [1] 25
-```
-
-``` r
 #subtração
 10-2
   #&gt; [1] 8
-```
-
-``` r
 #multiplicação
 2*10
   #&gt; [1] 20
-```
-
-``` r
 #divisão
 30/2
   #&gt; [1] 15
-```
-
-``` r
 #raiz quadrada
 sqrt(4)
   #&gt; [1] 2
-```
-
-``` r
 #potência
 2^2
   #&gt; [1] 4
@@ -285,13 +270,10 @@ class: middle
 Para atribuir a um objeto, o sinal de atribuição é = ou &lt;-. 
 Exemplos:
 
-``` r
+```r
 x &lt;- 10/2
 x
   #&gt; [1] 5
-```
-
-``` r
 X
   #&gt; Error in eval(expr, envir, enclos): objeto 'X' não encontrado
 ```
@@ -323,19 +305,16 @@ class: middle
 
 Vamos atribuir a x a string banana. 
 
-``` r
+```r
 x &lt;- banana 
   #&gt; Error in eval(expr, envir, enclos): objeto 'banana' não encontrado
-```
-
-``` r
 x &lt;- "banana"
 x
   #&gt; [1] "banana"
 ```
 O primeiro caso (x&lt;-banana) não deu certo, pois ele entendeu que estamos atribuindo a x outro objeto banana, que não foi declarado. Para atribuir o string banana à x, precisamos colocar entre aspas ou aspas simples. Uma string sem aspas é entendido como um objeto, veja abaixo:
 
-``` r
+```r
 banana &lt;- 30
 x &lt;- banana
 x
@@ -349,13 +328,10 @@ class: middle
 Função class().
 
 
-``` r
+```r
 y &lt;- "ola"
 class(y)
   #&gt; [1] "character"
-```
-
-``` r
 
 x &lt;- 2.5
 class(x)
@@ -365,13 +341,10 @@ class(x)
 Apagar objetos
 
 
-``` r
+```r
 x &lt;- 20
 x
   #&gt; [1] 20
-```
-
-``` r
 remove(x)
 x
   #&gt; Error in eval(expr, envir, enclos): objeto 'x' não encontrado
@@ -379,7 +352,7 @@ x
 
 E se eu quiser limpar o console - apaga todos os objetos atribuidos até aqui:
 
-``` r
+```r
 rm(list=ls())
 ```
 
@@ -402,38 +375,26 @@ class: middle
 ### Vetor
  &lt;!-- Como atribuir varios valores a um objeto?  Para entrar com vários números (ou nomes, ou qualquer outro grupo de coisas), precisamos usar uma função para dizer ao programa que os valores serão combinados em um único vetor. --&gt;
 
-``` r
+```r
 x &lt;- c(2,3,4)
 x
   #&gt; [1] 2 3 4
-```
-
-``` r
 y &lt;- seq(1:10)
 y
   #&gt;  [1]  1  2  3  4  5  6  7  8  9 10
-```
-
-``` r
 z &lt;- rep(1,10)
 z
   #&gt;  [1] 1 1 1 1 1 1 1 1 1 1
-```
-
-``` r
 a &lt;- 1:10
 a
   #&gt;  [1]  1  2  3  4  5  6  7  8  9 10
-```
-
-``` r
 bicho &lt;-c("macaco","pato","galinha","porco")
 bicho
   #&gt; [1] "macaco"  "pato"    "galinha" "porco"
 ```
 E se quisermos visualizar o conteúdo da posição 2 no vetor bicho?
 
-``` r
+```r
 bicho[2]
   #&gt; [1] "pato"
 ```
@@ -445,7 +406,7 @@ class: middle
 Operações vetoriais
 
 
-``` r
+```r
 k &lt;- x*2
 y &lt;- c(x,k)
 y
@@ -457,7 +418,7 @@ Como calcularia o IMC de 6 pessoas?
 --
 
 
-``` r
+```r
 peso &lt;- c(62, 70, 52, 98, 90, 70)
 altura &lt;- c(1.70, 1.82, 1.75, 1.94, 1.84, 1.61)
 imc &lt;- peso/(altura^2)
@@ -467,7 +428,7 @@ imc
 
 Função length(). 
 
-``` r
+```r
 length(imc)
   #&gt; [1] 6
 ```
@@ -478,31 +439,19 @@ class: middle
 ### Matrizes
 
 
-``` r
+```r
 x &lt;- matrix(seq(1:16), nrow=4,ncol=4); x
   #&gt;      [,1] [,2] [,3] [,4]
   #&gt; [1,]    1    5    9   13
   #&gt; [2,]    2    6   10   14
   #&gt; [3,]    3    7   11   15
   #&gt; [4,]    4    8   12   16
-```
-
-``` r
 x[2,3] #retorna o elemento na segunda linha e terceira coluna da matriz
   #&gt; [1] 10
-```
-
-``` r
 x[3,  ]   # seleciona a 3ª linha
   #&gt; [1]  3  7 11 15
-```
-
-``` r
 x[ , 2]   # seleciona a 2ª coluna
   #&gt; [1] 5 6 7 8
-```
-
-``` r
 x[1,] &lt;- c(13,15,19,30)  #substituir a primeira linha por (13,15,19,30)
 
 x
@@ -514,7 +463,7 @@ x
 ```
 dimensao da matriz x?
 
-``` r
+```r
 dim(x)
   #&gt; [1] 4 4
 ```
@@ -523,7 +472,7 @@ class: middle
 
 Concatenar linhas em uma matriz
 
-``` r
+```r
 vet &lt;- c(2,20,12,34)
 x2 &lt;- rbind(x,vet); x2
   #&gt;     [,1] [,2] [,3] [,4]
@@ -536,7 +485,7 @@ x2 &lt;- rbind(x,vet); x2
 
 Concatenar colunas em uma matriz
 
-``` r
+```r
 v2 &lt;- c(25,10,15,4) 
 x3 &lt;- cbind(x,v2); x3
   #&gt;                  v2
@@ -553,30 +502,21 @@ class: middle
 
 Operações matriciais
 
-``` r
+```r
 xa &lt;- x2[1:2,1:2]
 xb &lt;- matrix(rnorm(4),2,2)
 xa*xb #multiplicacao ponto a ponto
-  #&gt;        [,1]      [,2]
-  #&gt;  -0.8372095 19.937466
-  #&gt;   3.6095383 -7.440861
-```
-
-``` r
+  #&gt;       [,1]       [,2]
+  #&gt;  -3.035533 -20.669362
+  #&gt;  -2.464070   5.210473
 xa%*%xb #multiplicacao matricial
-  #&gt;      [,1]      [,2]
-  #&gt;  26.23433 -1.323014
-  #&gt;  10.69981 -4.782532
-```
-
-``` r
+  #&gt;        [,1]      [,2]
+  #&gt;  -21.516055 -4.887264
+  #&gt;   -7.859214  2.454558
 solve(xa) #inversa de xa
   #&gt;                            
   #&gt; [1,]  0.12500000 -0.3125000
   #&gt; [2,] -0.04166667  0.2708333
-```
-
-``` r
 diag(xa) #matriz diagonal
   #&gt; [1] 13  6
 ```
@@ -590,7 +530,7 @@ Essa é a grande diferença entre data.frame’s e matrizes (matriz é só numer
 
 Posso criar um data frame no R com os vetores, por exemplo:
 
-``` r
+```r
 ID &lt;- seq(1:6)
 pes &lt;- c(62, 70, 52, 98, 90, 70)
 alt &lt;- c(1.70, 1.82, 1.75, 1.94, 1.84, 1.61)
@@ -611,14 +551,14 @@ class: middle
 
 Selecionar a variavel de interesse:
 
-``` r
+```r
 dados$altura
   #&gt; [1] 1.70 1.82 1.75 1.94 1.84 1.61
 ```
 
 Putz, esqueci de colocar a varivel de grupo no data frame. Tenho que criar tudo de novo? Não:
 
-``` r
+```r
 gr &lt;- c(rep(1,3),rep(2,3))
 dados$grupo &lt;- gr
 
@@ -649,12 +589,9 @@ Funcoes uteis para data.frame:
 
 
 
-``` r
+```r
 names(dados)
   #&gt; [1] "ID"     "peso"   "altura" "imc"    "grupo"
-```
-
-``` r
 str(dados)
   #&gt; 'data.frame':	6 obs. of  5 variables:
   #&gt;  $ ID    : int  1 2 3 4 5 6
@@ -668,24 +605,18 @@ str(dados)
 class: middle
 
 
-``` r
+```r
 mean(dados$imc)
   #&gt; [1] 23.1988
-```
-
-``` r
 sd(dados$imc)
   #&gt; [1] 4.00006
-```
-
-``` r
 summary(dados$imc)
   #&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
   #&gt;   16.98   21.21   23.75   23.20   26.45   27.01
 ```
 
 
-``` r
+```r
 table(dados$grupo)
   #&gt; 
   #&gt; 1 2 
@@ -699,15 +630,12 @@ class: middle
 &lt;!-- Fatores podem ser vistos como vetores de inteiros que possuem rótulos (labels). Eles são úteis para representar uma variável categórica (nominal e ordinal). --&gt;
 
 
-``` r
+```r
 sexo &lt;- c("M", "H", "H", "H", "M", "M", "H")
 sex &lt;- as.factor(sexo)
 sex
   #&gt; [1] M H H H M M H
   #&gt; Levels: H M
-```
-
-``` r
 levels(sex)
   #&gt; [1] "H" "M"
 ```
@@ -717,22 +645,22 @@ class: middle
 
 ### Arrays
 
-``` r
+```r
 dim3 &lt;- array(rnorm(18),dim = c(3,3,2))
 dim3
   #&gt; , , 1
   #&gt; 
-  #&gt;             [,1]       [,2]      [,3]
-  #&gt; [1,] -2.18762126  0.7044413 -1.003252
-  #&gt; [2,] -0.04948568 -1.6215977  0.621693
-  #&gt; [3,] -1.37273995 -0.3542223  1.457049
+  #&gt;            [,1]        [,2]       [,3]
+  #&gt; [1,]  0.4920982 -0.03603598  0.7518811
+  #&gt; [2,]  0.3254065  1.28093481 -1.1085538
+  #&gt; [3,] -1.2909544  0.23053774 -0.3406590
   #&gt; 
   #&gt; , , 2
   #&gt; 
-  #&gt;            [,1]       [,2]      [,3]
-  #&gt; [1,]  0.7669454 -0.5459054 0.7842979
-  #&gt; [2,] -0.4022397 -0.7417886 1.6644336
-  #&gt; [3,]  0.3273261 -0.7769173 1.9581097
+  #&gt;           [,1]       [,2]       [,3]
+  #&gt; [1,] -1.346634 -0.4663069  0.6452644
+  #&gt; [2,] -1.324795 -0.7696207 -0.3606524
+  #&gt; [3,] -1.461145  2.3887574 -0.5251726
 ```
 
 ---
@@ -742,7 +670,7 @@ class: middle
 
 .scroll-box-14[
 
-``` r
+```r
 ls &lt;- list(ls1 = 'a',ls2 = c(1,2,3),ls3 = array(rnorm(6),dim = c(3,1,2,1))); ls
   #&gt; $ls1
   #&gt; [1] "a"
@@ -754,16 +682,16 @@ ls &lt;- list(ls1 = 'a',ls2 = c(1,2,3),ls3 = array(rnorm(6),dim = c(3,1,2,1))); 
   #&gt; , , 1, 1
   #&gt; 
   #&gt;            [,1]
-  #&gt; [1,]  0.5554736
-  #&gt; [2,] -0.8836386
-  #&gt; [3,]  1.0424153
+  #&gt; [1,]  1.1425775
+  #&gt; [2,] -0.9643774
+  #&gt; [3,]  1.3008762
   #&gt; 
   #&gt; , , 2, 1
   #&gt; 
-  #&gt;            [,1]
-  #&gt; [1,] -0.9201645
-  #&gt; [2,] -2.8946405
-  #&gt; [3,]  0.4060797
+  #&gt;              [,1]
+  #&gt; [1,] -0.460198449
+  #&gt; [2,]  0.761367964
+  #&gt; [3,] -0.003965162
 ```
 ]
 ---
@@ -773,7 +701,7 @@ class: middle
 Igual a: ==
 
 
-``` r
+```r
 10==11
   #&gt; [1] FALSE
 ```
@@ -781,7 +709,7 @@ Igual a: ==
 Diferente de: !=
 
 
-``` r
+```r
 10!=11
   #&gt; [1] TRUE
 ```
@@ -802,13 +730,10 @@ class: middle
 * E: &amp; - será verdadeiro se os dois forem TRUE
 
 
-``` r
+```r
 x &lt;- 15
 x &gt; 10 &amp; x &lt; 30
   #&gt; [1] TRUE
-```
-
-``` r
 
 x &lt; 10 &amp; x &lt; 30
   #&gt; [1] FALSE
@@ -817,7 +742,7 @@ x &lt; 10 &amp; x &lt; 30
 * OU: | - será verdadeiro se um dos dois for TRUE
 
 
-``` r
+```r
 x &gt; 10 | x &gt; 30
   #&gt; [1] TRUE
 ```
@@ -825,7 +750,7 @@ x &gt; 10 | x &gt; 30
 * Negação: ! 
 
 
-``` r
+```r
 x &lt;- 15
 !x&lt;30
   #&gt; [1] FALSE
@@ -837,7 +762,7 @@ class: middle
 ### If e else
 
 
-``` r
+```r
 a &lt;- 224
 b &lt;- 225
 if (a==b) { v=10
@@ -847,7 +772,7 @@ v
 ```
 
 
-``` r
+```r
 a &lt;- 224
 b &lt;- 225
 if (a==b) { v=10
@@ -863,13 +788,13 @@ class: middle
 
 ### For
 
-``` r
+```r
 m &lt;- c(1,20,50,60,100)
 ```
 Quero criar um novo vetor, p digamos,  que seja formado por cada elemento 
 de m dividido por sua posição. 
 
-``` r
+```r
 p &lt;- rep(0,length(m))
 for (i in 1: length(m)){
   p[i] &lt;- m[i]/i
@@ -884,7 +809,7 @@ class: middle
 
 ### Funções 
 
-``` r
+```r
 f.soma &lt;- function(x,y) {
   out &lt;- x+y
   return(out)
@@ -900,12 +825,9 @@ f.soma &lt;- function(x,y) {
 
 Vamos agora chamar a função:
 
-``` r
+```r
 f.soma(x=10,y=20)
   #&gt; [1] 30
-```
-
-``` r
 
 f.soma(10,20)
   #&gt; [1] 30
@@ -930,7 +852,7 @@ class: middle
 
   * Help/documentação do R 
 
-``` r
+```r
 help(mean) #ou
 ?mean
 ```
@@ -948,7 +870,7 @@ help(mean) #ou
 ## Adicionando GIFS
 
 
-``` r
+```r
 knitr::include_graphics("https://media2.giphy.com/media/S857VNxM6HwlZuYXrU/giphy.gif")
 ```
 
@@ -985,10 +907,32 @@ Só é necessário instalar o pacote uma vez, mas precisa carregá-lo toda vez q
 class: middle
 
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="figures/libraries-logo.png" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt; &amp;lt;/center&amp;gt;&amp;lt;/b&amp;gt;" width="70%" /&gt;
+&lt;img src="figures/libraries-logo.png" alt="&lt;center&gt;&lt;b&gt; &lt;/center&gt;&lt;/b&gt;" width="70%" /&gt;
 &lt;p class="caption"&gt;&lt;center&gt;&lt;b&gt; &lt;/center&gt;&lt;/b&gt;&lt;/p&gt;
 &lt;/div&gt;
 Imagem de [Business Science](https://www.business-science.io/code-tools/2023/09/30/top-9-r-packages.html)
+---
+
+### Pacotes mais utilizados na quimiometria!
+
+- **ChemmineR:** Utilizado em manejo e análise de dados químicos, especialmente para a visualização e a análise de dados de estruturas químicas e compostos.
+
+- **rcdk:** Permite que usuários do R acessem e utilizem as funcionalidades do Chemistry Development Kit (CDK), uma biblioteca de código aberto para a manipulação e análise de dados químicos, diretamente dentro do ambiente R, facilitando o trabalho com estruturas químicas e propriedades moleculares.
+
+- **rsm:** Este pacote é útil para a modelagem de superfícies de resposta, amplamente utilizada em química, especialmente em áreas como desenvolvimento de processos químicos e otimização de formulações.
+
+---
+
+### Na próxima aula
+
+- Tratamento de dados
+
+- Manipulação de dados
+
+- Medidas descritivas
+
+- Exercicios Práticos com um banco de dados real.
+
 ---
 
 class: middle, center

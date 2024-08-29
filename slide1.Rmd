@@ -726,7 +726,23 @@ Imagem de [Business Science](https://www.business-science.io/code-tools/2023/09/
 
 ### Pacotes mais utilizados na quimiometria!
 
+- **ChemmineR:** Utilizado em manejo e análise de dados químicos, especialmente para a visualização e a análise de dados de estruturas químicas e compostos.
 
+- **rcdk:** Permite que usuários do R acessem e utilizem as funcionalidades do Chemistry Development Kit (CDK), uma biblioteca de código aberto para a manipulação e análise de dados químicos, diretamente dentro do ambiente R, facilitando o trabalho com estruturas químicas e propriedades moleculares.
+
+- **rsm:** Este pacote é útil para a modelagem de superfícies de resposta, amplamente utilizada em química, especialmente em áreas como desenvolvimento de processos químicos e otimização de formulações.
+
+---
+
+### Na próxima aula
+
+- Tratamento de dados
+
+- Manipulação de dados
+
+- Medidas descritivas
+
+- Exercicios Práticos com um banco de dados real.
 
 ---
 
