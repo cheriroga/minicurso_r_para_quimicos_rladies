@@ -1,0 +1,146 @@
+---
+# Para transformar em PDF, usar: 
+# pagedown::chrome_print("docs/index.html")
+title: "R básico para Químicos <br>"
+subtitle: "Primeiros passos no R <br><br><br>"
+author: "<br><br><br><br> R-Ladies Vitória"
+date: "Setembro/2024"
+output:
+  xaringan::moon_reader:
+    css: ["css/kunoichi.css", "css/ninjutsu.css", "css/rladies-fonts.css", "scrollable.css"]
+    lib_dir: libs
+    nature:
+      ratio: "16:9"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+layout: true
+
+<div class="my-footer"><span>
+
+<a href="https://www.meetup.com/pt-BR/R-Ladies-Vitoria">Meetup</a> | 
+<a href="http://instagram.com/rladiesvix">Instagram</a> |
+<a href="https://github.com/rladies/meetup-presentations_vitoria">Github</a> 
+
+
+</span></div> 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center", message = FALSE, 
+                      warning = FALSE, comment = "  #>", collapse = T)
+
+library(knitr)
+```
+
+---
+
+### Na última aula
+
+- R-Ladies
+
+- Introdução ao R
+
+- R básico
+
+### O que veremos hoje
+
+- Importação de dados
+
+- Tratamento de dados
+
+- Medidas descritivas
+
+- Exercicios
+
+---
+class: middle
+
+# Importação de dados
+
+## Extensão .txt ou .csv
+
+Opção com o pacote **readr**.
+
+```{r, eval=FALSE,include=TRUE,echo=TRUE,error=TRUE}
+library(readr) #pacote readr
+dados_csv <- read_csv(file = "dados1.csv")
+dados_txt <- read_delim(file = "caminho-para-o-arquivo/dados1.txt", delim = " ")
+```
+
+<!-- O argumento file= representa o caminho onde o arquivo está alocado. Se o arquivo estiver no diretório de trabalho, não precisa especificar o caminho até o arquivo. O argumento delim= indica qual caracter separa cada coluna no arquivo de texto. -->
+ 
+Outra opção: 
+<!-- para leitura de arquivo .txt é usar a função read.table que já está salva na base, ou seja, não é necessário instalar pacote.  -->
+
+```{r, eval=FALSE,include=TRUE,echo=TRUE,error=TRUE}
+dados_txt2 <- read.table(file="dados1.txt",header=T)
+```
+
+<!-- O argumento header indica se a primeira linha do arquivo consta o nome das variáveis. Se for T (TRUE), a primeira linha é indicada como nome das variáveis. O default é header=F.  -->
+
+Vale ressaltar que para cada função read_, existe uma respectiva função write_ para salvar o arquivo no formato de interesse. Como exemplo, queremos salvar a base de dados cars. 
+
+```{r, eval=FALSE,include=TRUE,echo=TRUE,error=TRUE}
+write_csv(x = mtcars, path = "cars.csv")
+write_delim(x = mtcars, delim = " ", path = "cars.txt"))
+```
+
+---
+class: middle
+
+## Arquivos em Excel
+
+O pacote **readxl** pode ser utilizado para leiturade arquivos do Excel, como .xls e xlsx.
+
+```{r, eval=FALSE,include=TRUE,echo=TRUE,error=TRUE}
+library(readxl)
+dados_excel <- read_xls(path = "dados1.xls") #Leitura do arquivo .xls
+dados_excelx <- read_xlsx(path = "dados1.xlsx") #Leitura do arquivo .xlsx
+```
+
+Uma maneira mais simples é a utilização da função read_excel(), pois ela auto detecta a extensão do arquivo.
+```{r, eval=FALSE,include=TRUE,echo=TRUE,error=TRUE}
+library(readxl)
+dados_excel1 <- read_excel(path = "dados1.xls")
+dados_excelx1 <- read_excel(path = "dados1.xlsx")
+```
+
+
+
+## Arquivos de outros softwares
+
+<!-- Para ler dados salvos em extensão de outros softwares: SPSS, STATA e SAS: pacote haven.  -->
+
+```{r, eval=FALSE,include=TRUE,echo=TRUE,error=TRUE}
+library(haven)
+dados_stata <- read_stata("dados1.dta")
+dados_spss <- read_spss("dados1.sav")
+dados_sas <- read_sas("dados1.sas7bdat")  
+```
+
+<!-- Outra opção de pacote para importação de dados de outros softwares é o foreign. Além do SAS, STAT e SPSS, ele também lê dados do Octave, Minitab e Epi Info.  -->
+
+
+---
+class: middle
+
+## Tratamento de dados
+
+A análise de consistência consiste em realizar uma primeira análise dos dados com o intuito de encontrar inconsistências. 
+* boas práticas para nome das variáveis. 
+* identificar erros de digitação;
+* indivíduos imputados mais de uma vez na planilha de dados de maneira errada; 
+* identificar casos missings e avaliar se a observação está ausente de maneira correta ou não;
+* identificar as categorias de variáveis qualitativas.
+
+Consideramos como exemplo os dados fictícios de $n=30$ gestações gemelares. Vamos considerar duas bases de dados. Na primeira, chamada de "Base_CTG_caracterizacao" estão contidas as informações de caracterização das gestantes e gestações. 
+
+Para importar a base de dados: 
+```{r, eval=TRUE,include=TRUE,echo=TRUE,error=TRUE}
+library(readxl)
+dados <- read_excel(path = "database\petro.xls",na="NA", sheet = "Refino") # Selecionando a aba
+dados
+```
+
+

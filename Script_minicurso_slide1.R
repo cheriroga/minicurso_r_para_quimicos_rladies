@@ -251,5 +251,7 @@ install.packages("forcats")
 install.packages("skimr")
 
 
-### Chamo
+### Chamando biblioteca para a utilização
+
+library(tidyverse)
 
