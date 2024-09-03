@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>R básico para Químicos  </title>
+    <meta charset="utf-8" />
+    <meta name="author" content="     R-Ladies Vitória" />
+    <script src="libs/header-attrs-2.27/header-attrs.js"></script>
+    <link rel="stylesheet" href="css/kunoichi.css" type="text/css" />
+    <link rel="stylesheet" href="css/ninjutsu.css" type="text/css" />
+    <link rel="stylesheet" href="css/rladies-fonts.css" type="text/css" />
+    <link rel="stylesheet" href="scrollable.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# R básico para Químicos <br>
+]
+.subtitle[
+## Primeiros passos no R <br><br><br>
+]
+.author[
+### <br><br><br><br> R-Ladies Vitória
+]
+.date[
+### Setembro/2024
+]
+
+---
+
+layout: true
+
+&lt;div class="my-footer"&gt;&lt;span&gt;
+
+&lt;a href="https://www.meetup.com/pt-BR/R-Ladies-Vitoria"&gt;Meetup&lt;/a&gt; | 
+&lt;a href="http://instagram.com/rladiesvix"&gt;Instagram&lt;/a&gt; |
+&lt;a href="https://github.com/rladies/meetup-presentations_vitoria"&gt;Github&lt;/a&gt; 
+
+
+&lt;/span&gt;&lt;/div&gt; 
+
+
+
+---
+
+### Na última aula
+
+- R-Ladies
+
+- Introdução ao R
+
+- R básico
+
+### O que veremos hoje
+
+- Importação de dados
+
+- Tratamento de dados
+
+- Medidas descritivas
+
+- Exercicios
+
+---
+class: middle
+
+# Importação de dados
+
+## Extensão .txt ou .csv
+
+Opção com o pacote **readr**.
+
+
+``` r
+library(readr) #pacote readr
+dados_csv &lt;- read_csv(file = "dados1.csv")
+dados_txt &lt;- read_delim(file = "caminho-para-o-arquivo/dados1.txt", delim = " ")
+```
+
+&lt;!-- O argumento file= representa o caminho onde o arquivo está alocado. Se o arquivo estiver no diretório de trabalho, não precisa especificar o caminho até o arquivo. O argumento delim= indica qual caracter separa cada coluna no arquivo de texto. --&gt;
+ 
+Outra opção: 
+&lt;!-- para leitura de arquivo .txt é usar a função read.table que já está salva na base, ou seja, não é necessário instalar pacote.  --&gt;
+
+
+``` r
+dados_txt2 &lt;- read.table(file="dados1.txt",header=T)
+```
+
+&lt;!-- O argumento header indica se a primeira linha do arquivo consta o nome das variáveis. Se for T (TRUE), a primeira linha é indicada como nome das variáveis. O default é header=F.  --&gt;
+
+Vale ressaltar que para cada função read_, existe uma respectiva função write_ para salvar o arquivo no formato de interesse. Como exemplo, queremos salvar a base de dados cars. 
+
+
+``` r
+write_csv(x = mtcars, path = "cars.csv")
+write_delim(x = mtcars, delim = " ", path = "cars.txt"))
+```
+
+---
+class: middle
+
+## Arquivos em Excel
+
+O pacote **readxl** pode ser utilizado para leiturade arquivos do Excel, como .xls e xlsx.
+
+
+``` r
+library(readxl)
+dados_excel &lt;- read_xls(path = "dados1.xls") #Leitura do arquivo .xls
+dados_excelx &lt;- read_xlsx(path = "dados1.xlsx") #Leitura do arquivo .xlsx
+```
+
+Uma maneira mais simples é a utilização da função read_excel(), pois ela auto detecta a extensão do arquivo.
+
+``` r
+library(readxl)
+dados_excel1 &lt;- read_excel(path = "dados1.xls")
+dados_excelx1 &lt;- read_excel(path = "dados1.xlsx")
+```
+
+
+
+## Arquivos de outros softwares
+
+&lt;!-- Para ler dados salvos em extensão de outros softwares: SPSS, STATA e SAS: pacote haven.  --&gt;
+
+
+``` r
+library(haven)
+dados_stata &lt;- read_stata("dados1.dta")
+dados_spss &lt;- read_spss("dados1.sav")
+dados_sas &lt;- read_sas("dados1.sas7bdat")  
+```
+
+&lt;!-- Outra opção de pacote para importação de dados de outros softwares é o foreign. Além do SAS, STAT e SPSS, ele também lê dados do Octave, Minitab e Epi Info.  --&gt;
+
+
+---
+class: middle
+
+## Tratamento de dados
+
+A análise de consistência consiste em realizar uma primeira análise dos dados com o intuito de encontrar inconsistências. 
+* boas práticas para nome das variáveis. 
+* identificar erros de digitação;
+* indivíduos imputados mais de uma vez na planilha de dados de maneira errada; 
+* identificar casos missings e avaliar se a observação está ausente de maneira correta ou não;
+* identificar as categorias de variáveis qualitativas.
+
+Consideramos como exemplo os dados fictícios de `\(n=30\)` gestações gemelares. Vamos considerar duas bases de dados. Na primeira, chamada de "Base_CTG_caracterizacao" estão contidas as informações de caracterização das gestantes e gestações. 
+
+Para importar a base de dados: 
+
+``` r
+library(readxl)
+dados &lt;- read_excel(path = "database\petro.xls",na="NA", sheet = "Refino") # Selecionando a aba
+dados
+  #&gt; Error: '\p' is an unrecognized escape in character string (&lt;text&gt;:2:38)
+```
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

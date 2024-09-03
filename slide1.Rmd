@@ -41,6 +41,8 @@ class: middle
 
 - R-Ladies
 
+- Conceitos Básicos
+
 - Introdução ao R
 
 - R básico
@@ -91,6 +93,75 @@ O Capítulo da cidade de Vitória foi criado em 29 de setembro de 2019. Em 2020 
   - Twitter: [@RLadiesGlobal](https://twitter.com/rladiesglobal), [@rladiesvix](https://twitter.com/rladiesvix)
   - Instagram: [@RLadiesVix](http://instagram.com/rladiesvix)
   - Github: [https://github.com/rladies/meetup-presentations_vitoria](https://github.com/rladies/meetup-presentations_vitoria)
+
+<!-- Back-end e front-end -->
+---
+
+class: middle 
+
+### Conceitos Básicos
+
+# Back-end VS Front-end
+
+**Front-end** é a parte que os usuários veem e interagem, 
+**back-end** é a parte que faz o programa funcionar
+
+```{r, out.width="100%", fig.cap="<center><b> </center></b>"}
+knitr::include_graphics("img/back_front.png")
+```
+
+<!-- Terminal -->
+---
+
+class: middle 
+
+### Conceitos Básicos
+
+# Terminal, Console ou Prompt de Comando
+
+Interface de linha de comando que permite a comunicação direta com o sistema operacional do computador.
+
+- Para acessar aperte **Windows** + **R**
+
+<!-- Linguagens -->
+---
+
+class: middle 
+
+### Conceitos Básicos
+
+# Linguagem de Programação
+
+O computador "fala" **binário** (0 e 1, V e F, passa corrente e não passa corrente)  
+
+Humanos falam Português, Inglês, etc    
+
+Cada linguagem de programação tem suas próprias particularidades e é criada para resolver problemas específicos.
+
+
+
+```{r, out.width="50%", fig.cap="<center><b> </center></b>"}
+knitr::include_graphics("img/linguagens.png")
+```
+
+<!-- Tipagem -->
+---
+
+class: middle 
+
+### Conceitos Básicos
+
+# Tipos de dados
+
+- **Numeric**: números que podem ser tanto inteiros quanto decimais. (5; 3.2; 6.8)  
+
+- **Integer**: Especificamente números inteiros.(1, 2, 7)  
+
+- **Character**: Representa textos ou cadeias de caracteres. ("Rladies", "2", "UFES")  
+
+- **Logical**: Representa valores booleanos, TRUE ou FALSE.  
+
+
 
 
 <!-- R -->
